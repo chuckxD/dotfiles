@@ -1,10 +1,12 @@
 [alias]
-
+	co = checkout
+	ci = commit
+	br = branch
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
 	# View the current working tree status using the short format.
-	s = status -s
+	st = status -sb
 
 	# Show the diff between the latest commit and the current state.
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -16,7 +18,7 @@
 	p = pull --recurse-submodules
 
 	# Clone a repository including all submodules.
-	c = clone --recursive
+	cl = clone --recursive
 
 	# Commit all changes.
 	ca = !git add -A && git commit -av
@@ -79,7 +81,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`.
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
@@ -125,8 +127,9 @@
 	untracked = cyan
 
 [commit]
-
 	# https://help.github.com/articles/signing-commits-using-gpg/
+	# and
+	# https://github.com/pstadler/keybase-gpg-github for additional gpg setup
 	gpgsign = true
 
 [diff]

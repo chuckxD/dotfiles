@@ -1,0 +1,94 @@
+"*":
+  "atom-clock":
+    showUTC: true
+  "atom-terminal": {}
+  core:
+    disabledPackages: [
+      "sync-settings"
+      "Sublime-Style-Column-Selection"
+      "atom-transpose"
+      "autoclose-html"
+      "case-keep-replace"
+      "change-case"
+      "duplicate-line-or-selection"
+      "editorconfig"
+      "multi-cursor"
+      "es6-javascript"
+      "terminal-plus"
+      "atom-ide-debugger-node"
+      "atom-ide-debugger-python"
+      "atom-ide-ui"
+      "ide-json"
+      "ide-yaml"
+      "linter-csslint"
+      "Hydrogen"
+      "hydrogen-launcher"
+      "vim-surround"
+      "atom-react"
+      "vim-mode-visual-block"
+      "vim-mode-plus-ex-mode"
+      "nvim-mode"
+      "move-cursor-improved"
+      "vim-mode-clipboard-plus"
+      "vim-mode-plus-duplicate"
+      "vim-mode-plus-exchange"
+      "vim-mode-plus-keymaps-for-tree-view"
+      "vim-mode-zz"
+      "vim-mode-plus-replace-with-execution"
+      "vim-mode-plus-move-selected-text"
+      "vim-mode-plus-macros"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-black-ui"
+      "ir-black-k-syntax"
+    ]
+    uriHandlerRegistration: "always"
+    useTreeSitterParsers: false
+  editor:
+    fontSize: 12
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "7167d68a-4de7-4b7f-9a5e-002b1c5c4a0f"
+  gist:
+    token: "b158678ac60c921d45424b53d41dce1e8459a8ee"
+  kite:
+    showWelcomeNotificationOnStartup: false
+  linter: {}
+  "linter-ui-default":
+    panelHeight: 233.1428985595703
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
+      respectEslintignore: false
+      showInStatusBar: true
+    prettierEslintOptions: {}
+    useEslint: true
+  "terminal-plus":
+    core: {}
+    style:
+      theme: "pro"
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: true
+  welcome:
+    showOnStartup: false
+core:
+  ignoredNames: [
+    ".git"
+    ".svn"
+    ".DS_Store"
+  ]
+"exception-reporting":
+  userId: "750db657-913b-52ea-512d-dea57c560caf"
+metrics:
+  userId: "6d7958e72f635b2868a2e1b862219e92281e2fb7"
+"release-notes":
+  viewedVersion: "0.69.0"
+welcome:
+  showOnStartup: false

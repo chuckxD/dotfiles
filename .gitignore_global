@@ -12,3 +12,27 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Subversion
+.svn/
+
+# Vim
+.sw?
+.*.sw?
+.*.un~
+Session.vim
+
+# Zsh
+.rake_tasks
+.cap_tasks
+
+# OS X
+.DS_Store
+.Trashes
+._.Trashes
+
+# KDE
+.directory
+
+# Rubygems
+mkmf.log

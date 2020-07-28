@@ -169,3 +169,265 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# graywh functions
+if [[ -x $(which rbenv) ]]; then
+    function rbenv {
+      local command="$1"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+
+      case "$command" in
+      shell)
+        eval `rbenv "sh-$command" "$@"`;;
+      *)
+        command rbenv "$command" "$@";;
+      esac
+    }
+fi
+
+function __ls {
+    if (( $# > 3 )); then
+        echo "${argv[3]}:"
+        __ls_helper "${1}" "${2}" ${argv[3]}
+        for arg in ${argv[4,$#]}; do
+            echo
+            echo "${arg}:"
+            __ls_helper "${1}" "${2}" "${arg}"
+        done
+    else
+        __ls_helper "${1}" "${2}" "${3:-$PWD}"
+    fi
+}
+
+function __ls_helper {
+    eval "args=(${3}/${2})"
+    if (( ${#args[@]} > 2 )); then
+        (cd ${3} && eval "ls ${1} ${2}")
+    fi
+}
+
+function vimh {
+    vim -c "help $1 | only | bd#"
+}
+
+if [[ -f ~/.vim/plugin/manpageview.vim && $TERM != 'dumb' ]]; then
+    function man {
+        [[ $# -eq 0 ]] && return 1
+        vim -c "Man $* | only | bd#"
+    }
+fi
+
+function loop {
+    while true; do
+        $*
+    done
+}
+
+# calc shortcut 
+if [[ -x $(which bc) ]]; then
+    function calc {
+        echo "${@}" | bc -l
+    }
+fi
+
+# git ps1 stuff 
+function ___git_ps1 { 
+    local g p
+    g=$(git rev-parse --git-dir 2>/dev/null) || return
+    if [[ ${g} == .git ]]; then
+        __git_ps1 "$@"
+    elif [[ ${g} == ~/.git ]]; then
+        if [[ -f .gitignore ]]; then
+            __git_ps1 "$@"
+        else
+            p=$(git rev-parse --show-prefix 2>/dev/null)
+            case ${p} in
+            (.dotfiles/*|.vim/*)
+                __git_ps1 "$@"
+                ;;
+            esac
+        fi
+    else
+        __git_ps1 "$@"
+    fi
+}
+
+# more git ps1 stuff 
+# git ps1 stuff
+function __git_ps1 {
+    local g r b w i s u c p f
+
+    # quit early if no .git
+    g=$(git rev-parse --git-dir 2>/dev/null) || return
+
+    if [[ -f $g/rebase-merge/interactive ]]; then
+        r='|REBASE-i'
+        b=$(cat $g/rebase-merge/head-name)
+    elif [[ -d $g/rebase-merge ]]; then
+        r='|REBASE-m'
+        b=$(cat $g/rebase-merge/head-name)
+    else
+        if [[ -d $g/rebase-apply ]]; then
+            if [[ -f $g/rebase-apply/rebasing ]]; then
+                r='|REBASE'
+            elif [[ -f $g/rebase-apply/applying ]]; then
+                r='|AM'
+            else
+                r='|AM/REBASE'
+            fi
+        elif [[ -f $g/MERGE_HEAD ]]; then
+            r='|MERGING'
+            b=$(git symbolic-ref HEAD 2>/dev/null)
+        elif [[ -f $g/CHERRY_PICK_HEAD ]]; then
+            r='|CHERRY-PICKING'
+            b=$(git symbolic-ref HEAD 2>/dev/null)
+        else
+            [[ -f $g/BISECT_LOG ]] && r='|BISECTING'
+            # b=$(git symbolic-ref HEAD 2>/dev/null) || \
+                # b=$(git describe --exact-match HEAD 2>/dev/null) || \
+                # b=$(cut -c1-7 $g/HEAD)...
+        fi
+        b=$(git symbolic-ref HEAD 2>/dev/null) || {
+        b=$(
+        case ${GIT_PS1_DESCRIBE_STYLE} in
+            (contains)
+                git describe --contains HEAD ;;
+            (branch)
+                git describe --contains --all HEAD ;;
+            (describe)
+                git describe HEAD ;;
+            (* | default)
+                git describe --tags --exact-match HEAD ;;
+        esac 2>/dev/null) ||
+
+            b=$(cut -c1-7 $g/HEAD 2>/dev/null) ||
+            b='unknown'
+            b="(${b})"
+        }
+    fi
+
+    if [[ $(git rev-parse --is-inside-git-dir 2>/dev/null) == 'true' ]]; then
+        if [[ $(git rev-parse --is-bare-repository 2>/dev/null) == 'true' ]]; then
+            c='BARE:'
+        else
+            b='GIT_DIR!'
+        fi
+    elif [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == 'true' ]]; then
+        if [[ -n ${GIT_PS1_SHOWDIRTYSTATE} ]]; then
+            if [[ $(git config --bool bash.showDirtyState) != 'false' ]]; then
+                git diff --no-ext-diff --quiet --exit-code || w='*'
+                if  git rev-parse --quiet --verify HEAD >/dev/null ; then
+                    git diff-index --cached --quiet HEAD -- || i='+'
+                else
+                    i='#'
+                fi
+            fi
+        fi
+        if [[ -n ${GIT_PS1_SHOWSTASHSTATE} ]]; then
+            git rev-parse --verify refs/stash >/dev/null 2>&1 && s='$'
+        fi
+        if [[ -n ${GIT_PS1_SHOWUNTRACKEDFILES} ]]; then
+            if [[ -n $(git ls-files --others --exclude-standard) ]]; then
+                u='%%' # doubled for literal % with printf
+            fi
+        fi
+
+        if [[ -n ${GIT_PS1_SHOWUPSTREAM} ]]; then
+           __git_ps1_show_upstream
+        fi
+    fi
+
+    f="${w}${i}${s}${u}"
+    printf "${1:- (%s)}" "${c}${b##refs/heads/}${f:+ $f}${r}${p}"
+}
+
+# moin current revision 
+function lsmoin {
+    for page in ${@}; do
+        [[ -f ${page}/current ]] && echo "${page}/revisions/$(cat ${page}/current)"
+    done
+}
+
+function catmoin {
+   for page in $(lsmoin ${@}); do
+        [[ -f ${page} ]] && cat ${page}
+    done
+}
+
+# change PS1 
+function small_ps1 {
+    PS1=$my_small_ps1
+}
+function big_ps1 {
+    PS1=$my_big_ps1
+}
+
+# xterm title shortcut 
+function __xtermicontitle {
+    echo -ne "\033]0;${1}\a"
+}
+function __xtermicon {
+    echo -ne "\033]1;${1}\a"
+}
+function __xtermtitle {
+    echo -ne "\033]2;${1}\a"
+}
+
+function __screentitle {
+    echo -ne "\033k${1}\033\\"
+}
+
+# pwd
+find-up () {
+    path=$(pwd)
+    while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+        path=${path%/*}
+    done
+    echo "$path"
+}
+
+# paranoid nvm use
+cdnvm(){
+    cd "$@";
+    nvm_path=$(find-up .nvmrc | tr -d '[:space:]')
+
+    # If there are no .nvmrc file, use the default nvm version
+    if [[ ! $nvm_path = *[^[:space:]]* ]]; then
+
+        declare default_version;
+        default_version=$(nvm version default);
+
+        # If there is no default version, set it to `node`
+        # This will use the latest version on your machine
+        if [[ $default_version == "N/A" ]]; then
+            nvm alias default node;
+            default_version=$(nvm version default);
+        fi
+
+        # If the current version is not the default version, set it to use the default version
+        if [[ $(nvm current) != "$default_version" ]]; then
+            nvm use default;
+        fi
+
+        elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
+        declare nvm_version
+        nvm_version=$(<"$nvm_path"/.nvmrc)
+
+        # Add the `v` suffix if it does not exists in the .nvmrc file
+        if [[ $nvm_version != v* ]]; then
+            nvm_version="v""$nvm_version"
+        fi
+
+        # If it is not already installed, install it
+        if [[ $(nvm ls "$nvm_version" | tr -d '[:space:]') == "N/A" ]]; then
+            nvm install "$nvm_version";
+        fi
+
+        if [[ $(nvm current) != "$nvm_version" ]]; then
+            nvm use "$nvm_version";
+        fi
+    fi
+}
+

@@ -1,0 +1,7 @@
+/*
+!/.gitignore
+!/bundle/**
+!/colors/*.vim
+!/syntax/*.vim
+!/plugins/*.vim
+!/*.vim

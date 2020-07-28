@@ -9,8 +9,8 @@ set mark-symlinked-directories on
 
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent Up/Down behavior)
-"\e[B": history-search-forward
-"\e[A": history-search-backward
+"\C-p": history-search-backward
+"\C-n": history-search-forward
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
@@ -37,4 +37,27 @@ set output-meta on
 set convert-meta off
 
 # Use Alt/Meta + Delete to delete the preceding word
-"\e[3;3~": kill-word
+"\e^[d": kill-word
+
+set editing-mode vi
+set keymap vi-insert
+
+"\C-A": beginning-of-line
+"\e[1~": beginning-of-line
+"\e[H": beginning-of-line
+"\C-b": beginning-of-line
+"\e[4~": end-of-line
+"\e[F": end-of-line
+"\C-e": end-of-line
+"\C-E": end-of-line
+"\e[3~": delete-char
+"\^D": delete-char
+"\e[A": previous-history
+"\e[B": next-history
+"\e[C": forward-char
+"\e[D": backward-char
+"\C-k": kill-line
+"\C-u": unix-line-discard
+"\C-w": unix-filename-rubout
+"\e^[b": backward-word
+"\e^[f": forward-word
