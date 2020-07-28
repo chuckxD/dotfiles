@@ -16,10 +16,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # macbook only
-export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/redis-stable/src/redis-server:$HOME/redis-stable/src/redis-cli:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:$HOME/coding-configs/bin:${JAVA_HOME}:${HOME}/.bin"
+export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/redis-stable/src/redis-server:$HOME/redis-stable/src/redis-cli:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export TCL_PATH="/usr/local/bin"
 
 export PIP_PATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
+
 # Mac OS X {
 if [[ ${OSTYPE} == darwin* ]]; then
     # turn on colors
@@ -36,7 +37,6 @@ if [[ ${OSTYPE} == darwin* ]]; then
     # fore/back     | | | | | | | | | ,--- DIR_STICKY
     # upper = bold  | | | | | | | | | | ,- DIR_WO_STICKY
     LSCOLORS=ExGxFxdaCxdadahbadheec
-    # LSCOLORS=BxBxhxDxfxhxhxhxhxcxcx
 fi
 
 # History 
