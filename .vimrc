@@ -1,7 +1,8 @@
 " Use the Solarized Dark theme
-set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
+" set background=dark
+" colorscheme solarized
+" let g:solarized_termtrans=1
+colorscheme graywh
 
 " Make Vim more useful
 set nocompatible
@@ -50,7 +51,8 @@ set cursorline
 set tabstop=2
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+" this shows eol char
+set nolist
 " Highlight searches
 set hlsearch
 " Ignore case of searches
