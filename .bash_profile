@@ -124,8 +124,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
-defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false           # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false   # For VS Code Insider
+defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false    # For VS Codium
+defaults delete -g ApplePressAndHoldEnabled                                      # If necessary, reset global default
 
 # paranoid nvm use
 alias cd='cdnvm'
