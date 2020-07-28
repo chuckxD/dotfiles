@@ -35,8 +35,8 @@ if [[ ${OSTYPE} == darwin* ]]; then
     #   x - default | | | | | | | | ,----- EXE_GUID
     # fore/back     | | | | | | | | | ,--- DIR_STICKY
     # upper = bold  | | | | | | | | | | ,- DIR_WO_STICKY
-    # LSCOLORS=ExGxFxdaCxdadahbadheec
-    LSCOLORS=BxBxhxDxfxhxhxhxhxcxcx
+    LSCOLORS=ExGxFxdaCxdadahbadheec
+    # LSCOLORS=BxBxhxDxfxhxhxhxhxcxcx
 fi
 
 # History 
