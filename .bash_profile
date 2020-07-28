@@ -130,5 +130,5 @@ export NVM_DIR="$HOME/.nvm"
 # defaults delete -g ApplePressAndHoldEnabled                                        # If necessary, reset global default
 
 # paranoid nvm use
-# alias cd='cdnvm'
-# nvm use
+alias cd='cdnvm'
+nvm use default
