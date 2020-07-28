@@ -40,9 +40,9 @@ if [[ ${OSTYPE} == darwin* ]]; then
 fi
 
 # History 
-HISTFILE=~/.bash_history
-SAVEHIST=10000
-HISTSIZE=10000
+export HISTFILE=~/.bash_history
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000000
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";

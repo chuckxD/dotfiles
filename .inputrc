@@ -9,8 +9,7 @@ set mark-symlinked-directories on
 
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent Up/Down behavior)
-"\C-p": history-search-backward
-"\C-n": history-search-forward
+
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
@@ -54,6 +53,8 @@ set keymap vi-insert
 "\^D": delete-char
 "\e[A": previous-history
 "\e[B": next-history
+"\C-p": history-search-backward
+"\C-n": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char
 "\C-k": kill-line
