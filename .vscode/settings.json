@@ -1,0 +1,88 @@
+{
+  //
+  // less aggressive intellisene start
+  // https://ourcodeworld.com/articles/read/505/how-to-disable-autocompletion-and-intellisense-in-microsoft-visual-studio-code
+  //
+  // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
+  "editor.wordWrap": "off",
+  // Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
+  "editor.wrappingIndent": "none",
+  // Controls if quick suggestions should show up or not while typing
+  "editor.quickSuggestions": true,
+  // Controls the delay in ms after which quick suggestions will show up
+  "editor.quickSuggestionsDelay": 90,
+  // Enables parameter hints
+  "editor.parameterHints": true,
+  // Controls if the editor should automatically close brackets after opening them
+  "editor.autoClosingBrackets": false,
+  // Controls if the editor should automatically format the line after typing
+  "editor.formatOnType": false,
+  // Controls if suggestions should automatically show up when typing trigger characters
+  "editor.suggestOnTriggerCharacters": false,
+  // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
+  "editor.acceptSuggestionOnEnter": "off",
+  // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (;) can be a commit character that accepts a suggestion and types that character.
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  //
+  // less aggressive intellisense off
+  //
+  // normal editor stuff
+  "editor.useTabStops": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  // "editor.defaultFormatter": "vscode.typescript-language-features",
+  "[javascript]": {
+    // "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  //
+  // etc
+  "workbench.activityBar.visible": true,
+  "window.zoomLevel": -1,
+  // vim stuff
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  // end vim stuff
+  // start html stuff
+  "html.autoClosingTags": false,
+  "html.format.enable": false,
+  "html.validate.scripts": false,
+  "html.suggest.html5": false,
+  "html.format.extraLiners": ""
+  // "vim.useCtrlKeys": true,
+  // "vim.hlsearch": true,
+  // "vim.insertModeKeyBindings": [
+  //   {
+  //     "before": ["j", "j"],
+  //     "after": ["<Esc>"]
+  //   }
+  // ],
+  // "vim.normalModeKeyBindingsNonRecursive": [
+  //   {
+  //     "before": ["<leader>", "d"],
+  //     "after": ["d", "d"]
+  //   },
+  //   {
+  //     "before": ["<C-n>"],
+  //     "commands": [":nohl"]
+  //   }
+  // ],
+  // "vim.leader": "<space>",
+  // "vim.handleKeys": {
+  //   "<C-a>": false,
+  //   "<C-f>": false
+  // }
+}

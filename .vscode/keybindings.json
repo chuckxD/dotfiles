@@ -1,0 +1,74 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "cmd+k \\",
+		"command": "workbench.action.splitEditor"
+	},
+	{
+		"key": "cmd+\\",
+		"command": "-workbench.action.splitEditor"
+	},
+	{
+		"key": "alt+cmd+up",
+		"command": "-extension.vim_cmd+alt+up",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-extension.vim_cmd+alt+down",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "shift+alt+cmd+down",
+		"command": "cursorColumnSelectDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+cmd+down",
+		"command": "-cursorColumnSelectDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "editor.action.insertCursorBelow"
+	},
+	{
+		"key": "shift+cmd+s",
+		"command": "-workbench.action.files.saveLocalFile",
+		"when": "remoteFileDialogVisible"
+	},
+	{
+		"key": "ctrl+cmd+right",
+		"command": "workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+cmd+right",
+		"command": "-workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+cmd+up",
+		"command": "workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+cmd+up",
+		"command": "-workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "shift+cmd+j",
+		"command": "workbench.panel.terminal.focus"
+	}
+]
