@@ -133,7 +133,11 @@ export NVM_DIR="$HOME/.nvm"
 # defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false      # For VS Codium
 # defaults delete -g ApplePressAndHoldEnabled                                        # If necessary, reset global default
 
-# paranoid nvm use
+# paranoid/noisy nvm use
 alias cd='cdnvm'
 nvm use default
 nvm ls
+
+# tmux
+# echo "tmux shortcuts & cheatsheet - https://gist.github.com/MohamedAlaa/2961058"
+# tmux new -s home
