@@ -95,6 +95,10 @@ if [[ -f ~/.api-tokens ]]; then
     source ~/.api-tokens
 fi
 
+if [[ -f ~/.priv ]]; then
+    source ~/.priv
+fi
+
 # enable igo aliases
 if [[ -f ~/.igo_aliases ]]; then
     source ~/.igo_aliases
@@ -132,3 +136,4 @@ export NVM_DIR="$HOME/.nvm"
 # paranoid nvm use
 alias cd='cdnvm'
 nvm use default
+nvm ls
