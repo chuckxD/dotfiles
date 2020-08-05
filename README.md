@@ -1,10 +1,11 @@
-# my messy dotfiles
+# my messy dotfiles fork
 
-> [an improvement from my previous mess](https://github.com/chuckxD/not-my-dotfiles)
+<!-- >> [an improvement from my previous mess](https://github.com/chuckxD/not-my-dotfiles) -->
 
-### mostly forked from these 2 cool dudes: [mathiasbynens](https://github.com/mathiasbynens/dotfiles) & [graywh](https://github.com/graywh/dotfiles)
+- [mainly forked fromm mathias](https://github.com/mathiasbynens/dotfiles)
+- [cherry-picked fork from graywh](https://github.com/graywh/dotfiles)
 
-![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
+![Screenshot of my shell prompt](https://raw.githubusercontent.com/chuckxD/dotfiles/main/etc/Screen%20Shot%202020-08-05%20at%2005.47.49.png)
 
 ## Installation
 
@@ -54,7 +55,7 @@ export PATH="/usr/local/bin:$PATH"
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-My `~/.extra` looks something like this (see [.EXTRA_TEMPLATE](https://github.com/chuckxD/dotfiles/etc/.EXTRA_TEMPLATE)):
+My `~/.extra` looks something like this or [this template](https://github.com/chuckxD/dotfiles/etc/.EXTRA_TEMPLATE):
 
 ```bash
 # Git credentials
@@ -87,6 +88,10 @@ When setting up a new Mac, you may want to install some common [Homebrew](https:
 
 Some of the functionality of these dotfiles depends on formulae installed by `brew.sh`. If you don’t plan to run `brew.sh`, you should look carefully through the script and manually install any particularly important ones. A good example is Bash/Git completion: the dotfiles use a special version from Homebrew.
 
+### More cool stuff
+
+- [tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
+
 ## Feedback
 
 Suggestions/improvements
@@ -100,6 +105,8 @@ Suggestions/improvements
 
 ## Thanks to…
 
+- mathiasbynens for giving me something sensible [worth forking](https://github.com/mathiasbynens/dotfiles)
+- graywh for your cool [dotfiles](https://github.com/graywh/dotfiles)
 - @ptb and [his _macOS Setup_ repository](https://github.com/ptb/mac-setup)
 - [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
 - [Cătălin Mariș](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
