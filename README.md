@@ -91,6 +91,7 @@ Some of the functionality of these dotfiles depends on formulae installed by `br
 ### More cool stuff
 
 - [tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
+- [tmux intro](https://gist.github.com/chuckxD/6ea59d34169a6fa5d7a42fd56f8236ba)
 
 ## Feedback
 
