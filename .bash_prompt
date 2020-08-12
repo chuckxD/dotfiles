@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+[ -f ~/.functions ] && source ~/.functions;
+
+
 # Terminal stuff 
 if [[ ${COLORTERM} == 'gnome-terminal' && ${TERM} == 'xterm' ]]; then
     TERM=xterm-256color
@@ -132,8 +135,10 @@ else
     CyanBg=""
     DarkCyanBg=""
     None=""
+		
 fi
-my_big_ps1="${None}(${Blue}\$?${None})--(${Cyan}\t${None})--(${Green}\u${None}@${Magenta}\h${None})--(${Red}\w${Yellow}\$(___git_ps1 ' %s')${None})\n\\$ "
+# \$(___git_ps1 ' %s')
+my_big_ps1="${None}(${Blue}\$?${None})--(${Cyan}\t${None})--(${Green}\u${None}@${Magenta}\h${None})--(${Red}\w${Yellow}${None})\n\\$ "
 
 my_small_ps1="${NONE}\w \\$ "
 PS1=${my_big_ps1}
@@ -160,7 +165,7 @@ function prompt_command {
 PROMPT_COMMAND=prompt_command
 
 # Enable color support of ls and others 
-if [[ -x $(which dircolors) ]]; then
+if [[ -x $(which dircolors) && $(uname -o) != "Msys" ]]; then
     if [[ -f ~/.dircolors-${COLORS} ]]; then
         eval "$(dircolors -b ~/.dircolors-${COLORS})"
     else

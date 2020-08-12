@@ -4,48 +4,9 @@
 if [[ -z ${PS1} ]]; then
     return
 fi
-# Variables and Path {{{1
-export EDITOR=vim
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man' -\""
-export GREP_OPTIONS='--color=auto --line-number --binary-files=without-match'
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export XDG_CONFIG_HOME="$HOME/.config"
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-# macbook only
-export PATH="$PATH:$HOME/mongodb/bin:/Applications/MacVim.app/Contents/bin:/usr/local/Cellar/rabbitmq/3.2.1/sbin:export:$(brew --prefix)/bin:$HOME/nvim-osx64/bin:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/Users/jcs/Library/Python/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:$HOME/redis-stable/src/redis-server:$HOME/redis-stable/src/redis-cli:/Users/jcs/.rvm/gems/ruby-2.1.1/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export TCL_PATH="/usr/local/bin"
-
-export PIP_PATH="/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
-
-# Mac OS X {
-if [[ ${OSTYPE} == darwin* ]]; then
-    # turn on colors
-    CLICOLOR=1
-    # 0 a - black   , -------------------- DIR
-    # 1 b - red     | ,------------------- SYM_LINK
-    # 2 c - green   | | ,----------------- SOCKET
-    # 3 d - yellow  | | | ,--------------- PIPE
-    # 4 e - blue    | | | | ,------------- EXE
-    # 5 f - magenta | | | | | ,----------- BLOCK_SP
-    # 6 g - cyan    | | | | | | ,--------- CHAR_SP
-    # 7 h - gray    | | | | | | | ,------- EXE_SUID
-    #   x - default | | | | | | | | ,----- EXE_GUID
-    # fore/back     | | | | | | | | | ,--- DIR_STICKY
-    # upper = bold  | | | | | | | | | | ,- DIR_WO_STICKY
-    LSCOLORS=ExGxFxdaCxdadahbadheec
-fi
-
-# History 
-export HISTFILE=~/.bash_history
-export HISTSIZE=1000000
-export HISTFILESIZE=1000000000
-
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+# export vars
+[ -f ~/.exports ] && source ~/.exports
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -125,18 +86,18 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
 # old dotfile stuff
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false           # For VS Code
 # defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false   # For VS Code Insider
 # defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false      # For VS Codium
 # defaults delete -g ApplePressAndHoldEnabled                                        # If necessary, reset global default
 
 # paranoid/noisy nvm use
-alias cd='cdnvm'
-nvm use default
-nvm ls
+# alias cd='cdnvm'
+#nvm use default
+#Gnvm ls
 
 # tmux
 # echo "tmux shortcuts & cheatsheet - https://gist.github.com/MohamedAlaa/2961058"

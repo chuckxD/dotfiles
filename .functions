@@ -171,7 +171,7 @@ function tre() {
 }
 
 # graywh functions
-if [[ -x $(which rbenv) ]]; then
+if [[ $(uname -o) != "Msys" &&  -x $(which rbenv) ]]; then
     function rbenv {
       local command="$1"
       if [ "$#" -gt 0 ]; then
@@ -226,7 +226,7 @@ function loop {
 }
 
 # calc shortcut 
-if [[ -x $(which bc) ]]; then
+if [[ $(uname -o) != 'Msys' && -x $(which bc) ]]; then
     function calc {
         echo "${@}" | bc -l
     }

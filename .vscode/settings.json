@@ -133,7 +133,7 @@
     //
     // etc
     "workbench.activityBar.visible": true,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 1,
     // vim stuff
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
