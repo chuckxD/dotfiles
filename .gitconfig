@@ -183,4 +183,4 @@
 
 [init]
 
-	defaultBranch = main
+	defaultBranch = master
