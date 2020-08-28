@@ -180,3 +180,7 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[init]
+
+	defaultBranch = master
