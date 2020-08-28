@@ -1,165 +1,74 @@
 // Place your key bindings in this file to override the defaults
 [
-  {
-    "key": "cmd+k \\",
-    "command": "workbench.action.splitEditor"
-  },
-  {
-    "key": "cmd+\\",
-    "command": "-workbench.action.splitEditor"
-  },
-  {
-    "key": "alt+cmd+up",
-    "command": "-extension.vim_cmd+alt+up",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "alt+cmd+down",
-    "command": "-extension.vim_cmd+alt+down",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "shift+alt+cmd+down",
-    "command": "cursorColumnSelectDown",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+cmd+down",
-    "command": "-cursorColumnSelectDown",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "alt+cmd+down",
-    "command": "-editor.action.insertCursorBelow",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+cmd+down",
-    "command": "editor.action.insertCursorBelow"
-  },
-  {
-    "key": "shift+cmd+s",
-    "command": "-workbench.action.files.saveLocalFile",
-    "when": "remoteFileDialogVisible"
-  },
-  {
-    "key": "ctrl+cmd+right",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+cmd+down",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+cmd+right",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+cmd+up",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+cmd+up",
-    "command": "-workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+d c",
-    "command": "workbench.action.debug.continue",
-    "when": "inDebugMode"
-  },
-  {
-    "key": "f5",
-    "command": "-workbench.action.debug.continue",
-    "when": "inDebugMode"
-  },
-  {
-    "key": "cmd+d r",
-    "command": "workbench.action.debug.restart",
-    "when": "inDebugMode"
-  },
-  {
-    "key": "shift+cmd+f5",
-    "command": "-workbench.action.debug.restart",
-    "when": "inDebugMode"
-  },
-  {
-    "key": "shift+f9",
-    "command": "-editor.debug.action.toggleInlineBreakpoint",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal"
-  },
-  {
-    "key": "ctrl+alt+t",
-    "command": "-workbench.action.terminal.toggleTerminal"
-  },
-  {
-    "key": "shift+cmd+d",
-    "command": "-editor.action.copyLinesDownAction",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+cmd+j",
-    "command": "-workbench.action.search.toggleQueryDetails",
-    "when": "inSearchEditor || searchViewletFocus"
-  },
-  {
-    "key": "cmd+j",
-    "command": "-editor.action.joinLines"
-  },
-  {
-    "key": "shift+cmd+j",
-    "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "cmd+j",
-    "command": "-workbench.action.togglePanel"
-  },
-  {
-    "key": "cmd+d t",
-    "command": "editor.debug.action.toggleBreakpoint",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "f9",
-    "command": "-editor.debug.action.toggleBreakpoint",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+d p",
-    "command": "workbench.action.debug.pause",
-    "when": "debugState == 'running'"
-  },
-  {
-    "key": "f6",
-    "command": "-workbench.action.debug.pause",
-    "when": "debugState == 'running'"
-  },
-  {
-    "key": "cmd+d s",
-    "command": "workbench.action.debug.start",
-    "when": "!inDebugMode"
-  },
-  {
-    "key": "f5",
-    "command": "-workbench.action.debug.start",
-    "when": "!inDebugMode"
-  },
-  {
-    "key": "cmd+d shift+s",
-    "command": "workbench.action.debug.stop",
-    "when": "inDebugMode"
-  },
-  {
-    "key": "shift+f5",
-    "command": "-workbench.action.debug.stop",
-    "when": "inDebugMode"
-  }
+	{
+		"key": "cmd+k \\",
+		"command": "workbench.action.splitEditor"
+	},
+	{
+		"key": "cmd+\\",
+		"command": "-workbench.action.splitEditor"
+	},
+	{
+		"key": "alt+cmd+up",
+		"command": "-extension.vim_cmd+alt+up",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-extension.vim_cmd+alt+down",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "shift+alt+cmd+down",
+		"command": "cursorColumnSelectDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+cmd+down",
+		"command": "-cursorColumnSelectDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "editor.action.insertCursorBelow"
+	},
+	{
+		"key": "shift+cmd+s",
+		"command": "-workbench.action.files.saveLocalFile",
+		"when": "remoteFileDialogVisible"
+	},
+	{
+		"key": "ctrl+cmd+right",
+		"command": "workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "-workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+cmd+right",
+		"command": "-workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+cmd+up",
+		"command": "workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+cmd+up",
+		"command": "-workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "shift+cmd+j",
+		"command": "workbench.panel.terminal.focus"
+	}
 ]
