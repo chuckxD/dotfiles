@@ -179,12 +179,8 @@
 
 [url "git://gist.github.com/"]
 
-<<<<<<< HEAD
-	insteadOf = "gist:"
-=======
 	insteadOf = "gist:"
 
 [init]
 
 	defaultBranch = main
->>>>>>> 0cd43d175a25c0e13e1e06ab31ccfd9f0169cf73
