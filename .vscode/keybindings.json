@@ -43,11 +43,6 @@
     "when": "remoteFileDialogVisible"
   },
   {
-    "key": "ctrl+cmd+right",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
     "key": "alt+cmd+down",
     "command": "-workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
@@ -161,5 +156,9 @@
     "key": "shift+f5",
     "command": "-workbench.action.debug.stop",
     "when": "inDebugMode"
+  },
+  {
+    "key": "cmd+k cmd+down",
+    "command": "workbench.panel.terminal.focus"
   }
 ]
